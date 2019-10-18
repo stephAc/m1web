@@ -12,7 +12,10 @@ class Container
 			},
 			'controller.not.found' => function(){
 				return new \App\Front\Controller\NotFoundController();
-			}
+			},
+            'controller.country' => function(){
+                return new \App\Front\Controller\CountryController();
+            },
 		];
 
 		return $services[$idService]();

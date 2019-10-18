@@ -18,11 +18,11 @@ class City implements \JsonSerializable
 	}
 
 	public function getId():?int { return $this->id; }
-public function setId(?int $id):void { $this->id = $id;}
+    public function setId(?int $id):void { $this->id = $id;}
 
-public function getName():string { return $this->name; }
-public function setName(string $name):void { $this->name = $name;}
+    public function getName():string { return $this->name; }
+    public function setName(string $name):void { $this->name = $name;}
 
-public function getImage():string { return $this->image; }
-public function setImage(string $image):void { $this->image = $image;}
+    public function getImage():string { return $this->image; }
+    public function setImage(string $image):void { $this->image = $image;}
 }

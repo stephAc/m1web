@@ -14,6 +14,11 @@ class Container
 					$this->services['repository.city']()
 				);
 			},
+            'controller.country' => function(){
+                return new \App\API\Controller\CountryController(
+                    $this->services['repository.country']()
+                );
+            },
 			'controller.not.found' => function(){
 				return new \App\API\Controller\NotFoundController();
 			},
@@ -30,6 +35,11 @@ class Container
 					$this->services['core.database']()
 				);
 			},
+            'repository.country' => function(){
+                return new \App\API\Repository\CountryRepository(
+                    $this->services['core.database']()
+                );
+            },
 
 		];
 
