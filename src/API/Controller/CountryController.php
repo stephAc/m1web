@@ -17,7 +17,7 @@ class CountryController extends AbstractController
     public function index(array $uriVars = [])
     {
         $this->render([
-            'countries' => $this->countryRepository->findAll()
+            'countries' => $this->countryRepository->getCountriesAndCapitals()
         ]);
     }
 }

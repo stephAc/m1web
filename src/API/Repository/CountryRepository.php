@@ -14,15 +14,15 @@ class CountryRepository{
         $this->connection = $this->database->connect();
     }
 
-    public function findAll():array
+    public function getCountriesAndCapitals():array
     {
         $sql = "
-			SELECT country.*
+			SELECT name, (SELECT name FROM destination.city WHERE id = city_id) AS cityName
 			FROM destination.country;
 		";
         $query = $this->connection->prepare($sql);
         $query->execute();
-        $results = $query->fetchAll(\PDO::FETCH_CLASS, 'App\API\Entity\Country');
+        $results = $query->fetchAll();
         return  $results;
     }
 }
